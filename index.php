@@ -42,6 +42,18 @@ $catalog_items = [
     ],
 ];
 
+function neil ($n) {
+	ceil($n);
+	$str = (string)$n;
+	$result = 0;
+	if(strlen($str)>3){
+	  $result= number_format($n,0, ',', ' ');
+	}else{
+	$result = $n;
+	}
+	return $result;	
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -127,7 +139,7 @@ $catalog_items = [
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$val['PRICE'];?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=neil($val['PRICE']);?><b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
 
